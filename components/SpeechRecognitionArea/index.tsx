@@ -8,33 +8,19 @@ export const SpeechRecognitionArea = () => {
   const {
     startTranscribing,
     isRecognising,
-    setIsRecognising,
     speechArea,
     setSpeechArea,
     mirrorArea,
     stopTranscribing,
   } = useSpeechRecognition();
-  // click on the mic, toggle color red,
-
-  // //------
-  // const [hasMounted, setHasMounted] = useState(false);
-  // useEffect(() => {
-  //   setHasMounted(true);
-  // }, []);
-
-  // if (!hasMounted) return null;
-
-  // //---------
 
   const clickHandler = (e) => {
     e.preventDefault();
-    const currentIsRecognisingState = isRecognising;
-    if (currentIsRecognisingState) {
+    if (isRecognising) {
       stopTranscribing();
     } else {
       startTranscribing();
     }
-    setIsRecognising(!currentIsRecognisingState);
   };
 
   const speechAreaChangeHandler = (e) => {
