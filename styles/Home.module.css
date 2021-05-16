@@ -75,28 +75,3 @@
   font-size: 1.5rem;
   line-height: 1.5;
 }
-
-.speechArea {
-  min-width: 1400px;
-  min-height: 500px;
-  height: 500px;
-  background-color: var(--secondaryColor);
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.textBox {
-  min-width: 95%;
-  min-height: 85%;
-  border: dashed 1px;
-  margin-top: 10px;
-  font-size: 1.5rem;
-}
-
-.mic {
-  display: block;
-  margin: 10px;
-}

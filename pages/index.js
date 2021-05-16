@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css';
 import { ControlContainer } from '../components/ControlContainer.tsx';
+import { SpeechRecognitionArea } from '../components/SpeechRecognitionArea';
 
 export default function Home() {
   return (
@@ -41,15 +40,7 @@ export default function Home() {
         <div className={styles.controlWrapper}>
           <ControlContainer />
         </div>
-        <div className={styles.speechArea}>
-          <textarea className={styles.textBox} contentEditable></textarea>
-          <FontAwesomeIcon
-            className={styles.mic}
-            color="black"
-            size="sm"
-            icon={faMicrophone}
-          />
-        </div>
+        <SpeechRecognitionArea />
       </main>
 
       <footer className={styles.footer}>

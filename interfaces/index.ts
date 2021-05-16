@@ -13,3 +13,9 @@ export type Trigger = {
   verb: Verb;
   object: Obj;
 };
+
+declare global {
+  interface Window {
+    webkitSpeechRecognition: any;
+  }
+}
