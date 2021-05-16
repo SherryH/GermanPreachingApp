@@ -1,13 +1,13 @@
 import styles from '../../styles/Controls.module.css';
 import { verbData, articles, negateArticles, adjs } from '../../data/lesson4';
-import { Obj } from '../../interfaces';
+import { Obj, Verb } from '../../interfaces';
 
 const getMatchedName = (array: Obj[], match: Obj) =>
   array.find((a) => a.type === match.type).name;
 
-export const AnswerArea = ({ object, randomVerbIndex }: Props) => {
-  const ichVerb = verbData[randomVerbIndex].ich;
-  const duVerb = verbData[randomVerbIndex].du;
+export const AnswerArea = ({ object, verb, randomVerbIndex }: Props) => {
+  const ichVerb = verb.ich;
+  const duVerb = verb.du;
   const article = getMatchedName(articles, object);
   const negate = getMatchedName(negateArticles, object);
   const adj = getMatchedName(adjs, object);
@@ -34,5 +34,6 @@ export const AnswerArea = ({ object, randomVerbIndex }: Props) => {
 
 type Props = {
   object: Obj;
+  verb: Verb;
   randomVerbIndex: number;
 };

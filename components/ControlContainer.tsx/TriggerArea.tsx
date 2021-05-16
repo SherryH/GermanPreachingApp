@@ -1,4 +1,5 @@
 import { Dispatch } from 'react';
+import { removeChosenObject } from '.';
 import { verbData } from '../../data/lesson4';
 import { Obj, Trigger } from '../../interfaces';
 import styles from '../../styles/Controls.module.css';
@@ -23,9 +24,7 @@ export function TriggerArea({
       });
     }
 
-    const newObjects = objects.slice();
-    newObjects.splice(randomObjIndex, 1);
-    setObjects(newObjects);
+    setObjects(removeChosenObject(objects, randomObjIndex));
   };
 
   return (

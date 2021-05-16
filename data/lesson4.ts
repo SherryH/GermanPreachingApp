@@ -18,14 +18,14 @@ export const verbData: Verb[] = [
 export const objectData: Obj[] = [
   { name: 'Kaffee', type: 'm' },
   { name: 'Bad', type: 'n' },
-  { name: 'Lampe', type: 'f' },
-  { name: 'Stuhl', type: 'm' },
-  { name: 'Regal', type: 'n' },
-  { name: 'Brille', type: 'f' },
-  { name: 'Boden', type: 'm' },
-  { name: 'Handy', type: 'n' },
-  { name: 'Pflanze', type: 'f' },
-  { name: 'Auto', type: 'n' },
+  // { name: 'Lampe', type: 'f' },
+  // { name: 'Stuhl', type: 'm' },
+  // { name: 'Regal', type: 'n' },
+  // { name: 'Brille', type: 'f' },
+  // { name: 'Boden', type: 'm' },
+  // { name: 'Handy', type: 'n' },
+  // { name: 'Pflanze', type: 'f' },
+  // { name: 'Auto', type: 'n' },
 ];
 
 export const articles: Obj[] = [
