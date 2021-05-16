@@ -1,29 +1,29 @@
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import styles from './SpeechArea.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { useSpeechRecognition } from './useSpeechRecognition';
 
 export const SpeechRecognitionArea = () => {
+  const { startTranscribing, isRecognising, setIsRecognising } =
+    useSpeechRecognition();
   // click on the mic, toggle color red,
-  const [isRecognising, setIsRecognising] = useState(false);
 
+  //------
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
   if (!hasMounted) return null;
-  const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
-  const recognition = new SpeechRecognition();
-  recognition.lang = 'de-DE';
-  recognition.continuous = true;
-  recognition.interimResults = true;
-  recognition.maxAlternatives = 1;
+
+  //---------
 
   const clickHandler = (e) => {
     e.preventDefault();
     setIsRecognising((isRecognising) => !isRecognising);
+    startTranscribing();
   };
 
   return (
@@ -33,7 +33,7 @@ export const SpeechRecognitionArea = () => {
         onClick={clickHandler}
         className={styles.mic}
         color={isRecognising ? 'red' : 'black'}
-        size="lg"
+        size="2x"
         icon={faMicrophone}
       />
     </div>
