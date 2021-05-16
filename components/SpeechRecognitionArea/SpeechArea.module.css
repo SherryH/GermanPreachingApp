@@ -12,7 +12,7 @@
 
 .textBox {
   min-width: 98%;
-  min-height: 85%;
+  flex: 1;
   border: dashed 1px;
   margin-top: 5px;
   font-size: 1.5rem;
@@ -21,6 +21,7 @@
 .mic {
   display: block;
   margin: 10px;
+  height: 26px;
 }
 
 .mic:hover {
