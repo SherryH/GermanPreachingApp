@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Home.module.css';
+import { ControlContainer } from '../components/ControlContainer.tsx';
 
 export default function Home() {
   return (
@@ -38,18 +39,7 @@ export default function Home() {
         </p>
 
         <div className={styles.controlWrapper}>
-          <button type="button" className={styles.button}>
-            Trigger
-          </button>
-          <div className={styles.card}>
-            <p>sehen</p>
-          </div>
-          <button type="button" className={styles.button}>
-            Answers
-          </button>
-          <div className={styles.card}>
-            <p>sehen link</p>
-          </div>
+          <ControlContainer />
         </div>
         <div className={styles.speechArea}>
           <textarea className={styles.textBox} contentEditable></textarea>

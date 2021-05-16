@@ -1,0 +1,37 @@
+.button {
+  padding: 12px 16px;
+  border: transparent;
+  background: var(--primaryColor);
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  cursor: pointer;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  min-width: 20%;
+  min-height: 87px;
+  background-color: var(--secondaryColor);
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.answerArea {
+  flex: 1;
+}
