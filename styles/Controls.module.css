@@ -29,6 +29,9 @@
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.5;
+}
+
+.card p::first-letter {
   text-transform: capitalize;
 }
 

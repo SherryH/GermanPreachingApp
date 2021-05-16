@@ -1,8 +1,9 @@
 import { Dispatch } from 'react';
-import { removeChosenObject } from '.';
+
 import { verbData } from '../../data/lesson4';
 import { Obj, Trigger } from '../../interfaces';
 import styles from '../../styles/Controls.module.css';
+import { removeChosenObject } from '../../utils';
 
 export function TriggerArea({
   objects,
