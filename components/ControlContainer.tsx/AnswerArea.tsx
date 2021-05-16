@@ -1,11 +1,13 @@
-import styles from '../../styles/Controls.module.css';
-import { verbData, articles, negateArticles, adjs } from '../../data/lesson4';
+import styles from './Controls.module.css';
+import { articles, negateArticles, adjs } from '../../data/lesson4';
 import { Obj, Verb } from '../../interfaces';
 
 const getMatchedName = (array: Obj[], match: Obj) =>
   array.find((a) => a.type === match.type).name;
 
-export const AnswerArea = ({ object, verb, randomVerbIndex }: Props) => {
+const synth = typeof window !== 'undefined' && window.speechSynthesis;
+
+export const AnswerArea = ({ object, verb }: Props) => {
   const ichVerb = verb.ich;
   const duVerb = verb.du;
   const article = getMatchedName(articles, object);
@@ -17,12 +19,23 @@ export const AnswerArea = ({ object, verb, randomVerbIndex }: Props) => {
   const ans2 = `Ich ${ichVerb} ${article} ${adj} ${objectName}`;
   const ans3 = `${duVerb} du auch ${article} ${adj} ${objectName}?`;
   const ans4 = `Ich ${ichVerb} ${negate} ${adj} ${objectName}`;
+  //create speech synthesis
+  const clickHandler = (e) => {
+    const text = e.target.textContent;
+    const utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.rate = 0.8;
+    utterThis.lang = 'de-DE';
+    synth.speak(utterThis);
+  };
   return (
     <>
       <button type="button" className={styles.button}>
         Answers
       </button>
-      <div className={`${styles.card} ${styles.answerArea}`}>
+      <div
+        className={`${styles.card} ${styles.answerArea}`}
+        onClick={clickHandler}
+      >
         <p>{ans1}</p>
         <p>{ans2}</p>
         <p>{ans3}</p>
@@ -35,5 +48,4 @@ export const AnswerArea = ({ object, verb, randomVerbIndex }: Props) => {
 type Props = {
   object: Obj;
   verb: Verb;
-  randomVerbIndex: number;
 };

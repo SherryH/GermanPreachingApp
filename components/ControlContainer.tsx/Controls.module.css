@@ -38,3 +38,8 @@
 .answerArea {
   flex: 1;
 }
+
+.answerArea p:hover {
+  cursor: pointer;
+  color: var(--bgColor);
+}
