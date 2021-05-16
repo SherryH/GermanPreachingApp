@@ -20,8 +20,7 @@ export const useSpeechRecognition = () => {
 
   function startTranscribing() {
     if (isRecognising) return;
-    console.log({ isRecognising });
-    console.log({ recognition });
+
     try {
       recognition.start();
       dictate();
@@ -78,10 +77,10 @@ export const useSpeechRecognition = () => {
 
   return {
     startTranscribing,
+    stopTranscribing,
     isRecognising,
     speechArea,
     setSpeechArea,
     mirrorArea,
-    stopTranscribing,
   };
 };
