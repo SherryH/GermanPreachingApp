@@ -1,39 +1,60 @@
-import { useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 import styles from './SpeechArea.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { useSpeechRecognition } from './useSpeechRecognition';
+import { MirrorArea } from './MirrorArea';
 
 export const SpeechRecognitionArea = () => {
-  const { startTranscribing, isRecognising, setIsRecognising } =
-    useSpeechRecognition();
+  const {
+    startTranscribing,
+    isRecognising,
+    setIsRecognising,
+    speechArea,
+    setSpeechArea,
+    mirrorArea,
+    stopTranscribing,
+  } = useSpeechRecognition();
   // click on the mic, toggle color red,
 
-  //------
-  const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+  // //------
+  // const [hasMounted, setHasMounted] = useState(false);
+  // useEffect(() => {
+  //   setHasMounted(true);
+  // }, []);
 
-  if (!hasMounted) return null;
+  // if (!hasMounted) return null;
 
-  //---------
+  // //---------
 
   const clickHandler = (e) => {
     e.preventDefault();
-    setIsRecognising((isRecognising) => !isRecognising);
-    startTranscribing();
+    const currentIsRecognisingState = isRecognising;
+    if (currentIsRecognisingState) {
+      stopTranscribing();
+    } else {
+      startTranscribing();
+    }
+    setIsRecognising(!currentIsRecognisingState);
+  };
+
+  const speechAreaChangeHandler = (e) => {
+    setSpeechArea(e.target.value);
   };
 
   return (
     <div className={styles.speechArea}>
-      <textarea className={styles.textBox} contentEditable></textarea>
+      <MirrorArea mirrorArea={mirrorArea} />
+      <textarea
+        className={styles.textBox}
+        contentEditable
+        value={speechArea}
+        onChange={speechAreaChangeHandler}
+      />
       <FontAwesomeIcon
         onClick={clickHandler}
         className={styles.mic}
         color={isRecognising ? 'red' : 'black'}
-        size="2x"
+        size="sm"
         icon={faMicrophone}
       />
     </div>

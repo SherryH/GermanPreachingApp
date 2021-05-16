@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Lektion 4 Preaching Exercises</h1>
+        <h1 className={styles.title}>Lektion 4 Preaching Exercise</h1>
 
         <p className={styles.description}>
           1. Click "Trigger" to get a random combination of preaching vocabs

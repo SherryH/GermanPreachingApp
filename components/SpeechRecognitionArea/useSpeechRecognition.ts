@@ -16,7 +16,8 @@ if (SpeechRecognition) {
 export const useSpeechRecognition = () => {
   const [isRecognising, setIsRecognising] = useState(false);
   const [speechArea, setSpeechArea] = useState('');
-  // include isRecognising later
+  const [mirrorArea, setMirrorArea] = useState('');
+
   function startTranscribing() {
     if (isRecognising) return;
     console.log({ isRecognising });
@@ -31,14 +32,21 @@ export const useSpeechRecognition = () => {
       );
     }
   }
+
+  function stopTranscribing() {
+    recognition.stop();
+    setIsRecognising(false);
+  }
+
   function dictate() {
     recognition.onstart = function () {
       console.log('onstart====');
-      // transcriptTextArea.innerHTML = ""
       setIsRecognising(true);
     };
 
     recognition.onend = function () {
+      console.log('onend*****');
+      setMirrorArea('');
       setIsRecognising(false);
       recognition.stop();
     };
@@ -48,8 +56,11 @@ export const useSpeechRecognition = () => {
       recognition.abort();
     };
 
+    // closure variable for updating speechArea correctly with previous text
+    let newSpeech = '';
     recognition.onresult = function (char) {
-      let transcript;
+      let transcript = '';
+      let interimTranscript = '';
       for (let x = char.resultIndex; x < char.results.length; x++) {
         transcript = char.results[x][0].transcript;
         // API finished processing the speech, move onto the next sentence
@@ -58,7 +69,16 @@ export const useSpeechRecognition = () => {
           console.log('isFinal', transcript);
           console.log({ isRecognising });
           console.log({ recognition });
-          setIsRecognising(false);
+
+          newSpeech = newSpeech + transcript;
+          console.log('newSpeech   ', newSpeech);
+          setSpeechArea(newSpeech);
+        } else {
+          interimTranscript = interimTranscript + transcript;
+          console.log('interim...', interimTranscript);
+          setMirrorArea(interimTranscript); // state update not triggered during onResult
+          // maybe it does, just it is not placed on DOM yet!
+          console.log('mirrorArea', mirrorArea);
         }
       }
     };
@@ -68,5 +88,9 @@ export const useSpeechRecognition = () => {
     startTranscribing,
     isRecognising,
     setIsRecognising,
+    speechArea,
+    setSpeechArea,
+    mirrorArea,
+    stopTranscribing,
   };
 };

@@ -14,7 +14,7 @@
   min-width: 98%;
   min-height: 85%;
   border: dashed 1px;
-  margin-top: 10px;
+  margin-top: 5px;
   font-size: 1.5rem;
 }
 
@@ -25,4 +25,16 @@
 
 .mic:hover {
   cursor: pointer;
+}
+
+.micWrapper {
+  flex-basis: 15px;
+  position: relative;
+}
+
+.mirrorArea {
+  padding: 12px 18px;
+  background-color: brown;
+  border-radius: 5px;
+  margin-top: 5px;
 }
