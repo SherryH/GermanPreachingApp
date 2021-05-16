@@ -11,7 +11,7 @@
 }
 
 .textBox {
-  min-width: 95%;
+  min-width: 98%;
   min-height: 85%;
   border: dashed 1px;
   margin-top: 10px;
@@ -21,4 +21,8 @@
 .mic {
   display: block;
   margin: 10px;
+}
+
+.mic:hover {
+  cursor: pointer;
 }
