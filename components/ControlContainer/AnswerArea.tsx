@@ -2,11 +2,13 @@ import styles from './Controls.module.css';
 import { articles, negateArticles, adjs } from '../../data/lesson4';
 import { Obj, Verb } from '../../interfaces';
 import { speak } from './speechSynthesis';
+import { useState } from 'react';
 
 const getMatchedName = (array: Obj[], match: Obj) =>
   array.find((a) => a.type === match.type).name;
 
 export const AnswerArea = ({ object, verb }: Props) => {
+  const [showAnswer, setShowAnswer] = useState(false);
   const ichVerb = verb.ich;
   const duVerb = verb.du;
   const article = getMatchedName(articles, object);
@@ -19,18 +21,27 @@ export const AnswerArea = ({ object, verb }: Props) => {
   const ans3 = `${duVerb} du auch ${article} ${adj} ${objectName}?`;
   const ans4 = `Ich ${ichVerb} ${negate} ${adj} ${objectName}`;
 
-  //create speech synthesis
   const clickHandler = (e) => {
     const text = e.target.textContent;
     speak(text);
   };
+
+  const buttonClickHandler = () => {
+    setShowAnswer(!showAnswer);
+  };
+
   return (
     <>
-      <button type="button" className={styles.button}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={buttonClickHandler}
+      >
         Answers
       </button>
       <div
         className={`${styles.card} ${styles.answerArea}`}
+        style={{ visibility: showAnswer ? 'visible' : 'hidden' }}
         onClick={clickHandler}
       >
         <p>{ans1}</p>
