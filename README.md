@@ -19,6 +19,7 @@ NextJS, TypeScript, CSS Modules
 - Add more lessons
 - Check for other browser support - FF, Edge
 - Insert the text into the speechArea where the cursor is placed (like Speechnote.co)
+- use a Reach UI modal instead of alert
 
 ## Development Environment
 

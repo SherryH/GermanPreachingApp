@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { ControlContainer } from '../components/ControlContainer.tsx';
+import { ControlContainer } from '../components/ControlContainer';
 import { SpeechRecognitionArea } from '../components/SpeechRecognitionArea';
 
 export default function Home() {

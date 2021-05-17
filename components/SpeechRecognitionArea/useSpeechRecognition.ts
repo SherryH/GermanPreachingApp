@@ -55,14 +55,14 @@ export const useSpeechRecognition = () => {
       recognition.abort();
     };
 
-    recognition.onresult = function (char) {
+    recognition.onresult = function (word) {
       let transcript = '';
       let interimTranscript = '';
-      for (let x = char.resultIndex; x < char.results.length; x++) {
-        transcript = char.results[x][0].transcript;
+      for (let x = word.resultIndex; x < word.results.length; x++) {
+        transcript = word.results[x][0].transcript;
         // API finished processing the current sentence, move onto the next sentence
         // isFinal is true
-        if (char.results[x].isFinal) {
+        if (word.results[x].isFinal) {
           console.log('isFinal', transcript);
           setSpeechArea((speechArea) => {
             return speechArea + transcript;
