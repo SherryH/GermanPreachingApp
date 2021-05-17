@@ -10,6 +10,8 @@ This is to accompany the preaching exercises in the Lesson 4 of the [Smarter Ger
 
 In lesson 4, there are multiple combinations of verbs and objects we can select for preaching exercise. I want an app that can randomly generate a [verb, object] combination for me. It can also transcribe my speech so I get instant feedback for prounciation. I can also get to listen to the correct pronounciation easily.
 
+<img src="public/out.gif" height="350"/>
+
 ## Technology
 
 NextJS, TypeScript, CSS Modules
