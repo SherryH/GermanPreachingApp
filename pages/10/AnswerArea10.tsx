@@ -16,8 +16,8 @@ export const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
   const object = objectData[currentTriggerIndex];
   const normalAdj = adjData[currentTriggerIndex];
   const adj =
-    normalAdj?.type === 'm' ? `${normalAdj.name}en` : `${normalAdj.name}e`;
-  const objectName = object.name;
+    normalAdj?.type === 'm' ? `${normalAdj?.name}en` : `${normalAdj?.name}e`;
+  const objectName = object?.name;
 
   const accusativeArticle = getMatchedName(accusativeArticles, object);
   const which = getMatchedName(whichs, object);
