@@ -19,6 +19,6 @@
     "**/*.ts",
     "**/*.tsx",
     "components/TriggerButton.js"
-  ],
+, "components/ControlContainer"  ],
   "exclude": ["node_modules"]
 }

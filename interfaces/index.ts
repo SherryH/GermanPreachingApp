@@ -14,6 +14,10 @@ export type Trigger = {
   object: Obj;
 };
 
+export type Trigger10 = {
+  adj: Obj;
+  object: Obj;
+};
 declare global {
   interface Window {
     webkitSpeechRecognition: any;
