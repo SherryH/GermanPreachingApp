@@ -12,4 +12,4 @@ export function getRandomIndex(len) {
 }
 
 export const getMatchedName = (array: Obj[], match: Obj) =>
-  array.find((a) => a.type === match.type).name;
+  array.find((a) => a.type === match?.type)?.name;
