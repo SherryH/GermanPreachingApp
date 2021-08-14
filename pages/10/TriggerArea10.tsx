@@ -4,9 +4,9 @@ import styles from '../../components/ControlContainer/Controls.module.css';
 import { useEffect } from 'react';
 import { adjData, objectData } from '../../data/lesson10';
 
-export const TriggerArea10 = ({
+const TriggerArea10 = ({
   currentTriggerIndex,
-  setCurrentTriggerIndex,
+  setCurrentTriggerIndex
 }: Props) => {
   useEffect(() => {
     if (currentTriggerIndex === adjData.length) {
@@ -49,3 +49,5 @@ type Props = {
   currentTriggerIndex: number;
   setCurrentTriggerIndex: Dispatch<SetStateAction<number>>;
 };
+
+export default TriggerArea10;

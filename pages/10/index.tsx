@@ -1,6 +1,6 @@
 import styles from '../../styles/Home.module.css';
 import { SpeechRecognitionArea } from '../../components/SpeechRecognitionArea';
-import { ControlContainer10 } from './ControlContainer10';
+import ControlContainer10 from './ControlContainer10';
 export default function Lecture10() {
   //lecture 10
   return (

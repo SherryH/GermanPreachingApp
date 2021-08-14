@@ -5,11 +5,11 @@ import {
   accusativeArticles,
   adjData,
   objectData,
-  whichs,
+  whichs
 } from '../../data/lesson10';
 import { getMatchedName } from '../../utils';
 
-export const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
+const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
   // -- create a hook ---
   // from currentTriggerIndex to get the current triggers
   // construct the answers from the triggers
@@ -34,7 +34,7 @@ export const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
   const buttonClickHandler = () => {
     setShowAnswer(!showAnswer);
   };
-  const clickHandler = (e) => {
+  const clickHandler = e => {
     const text = e.target.textContent;
     speak(text);
   };
@@ -65,3 +65,5 @@ export const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
 type Props = {
   currentTriggerIndex: number;
 };
+
+export default AnswerArea10;
