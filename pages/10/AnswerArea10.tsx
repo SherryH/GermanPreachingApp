@@ -5,7 +5,7 @@ import {
   accusativeArticles,
   adjData,
   objectData,
-  whichs
+  whichs,
 } from '../../data/lesson10';
 import { getMatchedName } from '../../utils';
 
@@ -34,7 +34,7 @@ const AnswerArea10 = ({ currentTriggerIndex }: Props) => {
   const buttonClickHandler = () => {
     setShowAnswer(!showAnswer);
   };
-  const clickHandler = e => {
+  const clickHandler = (e) => {
     const text = e.target.textContent;
     speak(text);
   };
