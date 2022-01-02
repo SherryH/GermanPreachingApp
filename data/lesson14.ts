@@ -63,9 +63,9 @@ export const answers = [
     'Weil ich das Versprechen nicht gebrochen habe.',
   ],
   [
-    'Hast du den Einkauf getrag',
-    'Ich habe den Einkauf nicht getrag',
-    'Warum hast du den Einkauf nicht getrag',
+    'Hast du den Einkauf getragen',
+    'Ich habe den Einkauf nicht getragen',
+    'Warum hast du den Einkauf nicht getragen',
     'Weil ich den Einkauf nicht getragen habe.',
   ],
   [
