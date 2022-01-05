@@ -1,3 +1,9 @@
+declare global {
+  interface window {
+      FB:any;
+  }
+}
+
 const synth = typeof window !== 'undefined' && window.speechSynthesis;
 
 export const speak = (text: string) => {
