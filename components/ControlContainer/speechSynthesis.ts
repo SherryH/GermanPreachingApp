@@ -1,6 +1,6 @@
 declare global {
   interface window {
-      FB:any;
+    speechSynthesis: any;
   }
 }
 
