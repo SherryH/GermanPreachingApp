@@ -1,5 +1,11 @@
 import { useState } from 'react';
 
+declare global {
+  interface Window {
+    SpeechRecognition: any;
+  }
+}
+
 export const SpeechRecognition =
   typeof window !== 'undefined' &&
   (window.SpeechRecognition || window.webkitSpeechRecognition);
