@@ -32,7 +32,7 @@ const AnswerArea14 = ({ currentTriggerIndex }: Props) => {
         style={{ visibility: showAnswer ? 'visible' : 'hidden' }}
         onClick={clickHandler}
       >
-        {answerSentences.map((ans) => (
+        {answerSentences?.map((ans) => (
           <p>{ans}</p>
         ))}
       </div>

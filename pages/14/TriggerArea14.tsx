@@ -17,6 +17,7 @@ const TriggerArea14 = ({
   }, [currentTriggerIndex]);
 
   const generateTriggers = () => {
+    if (currentTriggerIndex === triggers.length) return;
     setCurrentTriggerIndex(
       (currentTriggerIndex: number): number => currentTriggerIndex + 1
     );
