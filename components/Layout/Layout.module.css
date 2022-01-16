@@ -13,23 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
   font-size: 1.5rem;
-  margin-bottom: 0;
 }
 
 .controlWrapper {

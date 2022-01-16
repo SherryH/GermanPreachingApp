@@ -1,4 +1,3 @@
-import styles from '../../styles/Home.module.css';
 import { SpeechRecognitionArea } from '../../components/SpeechRecognitionArea';
 import ControlContainer14 from './ControlContainer14';
 export default function Lecture10() {
@@ -19,7 +18,7 @@ export default function Lecture10() {
       <p>B | Ich habe die Schokolade nicht gegessen.</p>
       <p>A | Warum hast du die Schokolade nicht gegessen?</p>
       <p>B | Weil ich die Schokolade nicht gegessen habe.</p>
-      <div className={styles.controlWrapper}>
+      <div className="controlWrapper">
         <ControlContainer14 />
       </div>
       <SpeechRecognitionArea />

@@ -25,4 +25,37 @@ a {
   --primaryHoverColor: #dd7c9e;
   --secondaryColor: #f5dfe6;
   --bgColor: #5b6270;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+footer {
+  text-align: center;
+}
+
+.controlWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  margin-top: 3rem;
+  width: 1400px;
 }
