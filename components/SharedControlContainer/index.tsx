@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { ClientOnly } from '../../components/ClientOnly';
-import { triggers } from '../../data/lesson14';
 import { TriggerArea } from '../../components/TriggerArea';
 import { AnswerArea } from '../../components/AnswerArea';
 
-const ControlContainer14 = () => {
+export const SharedControlContainer = ({ triggers }) => {
   const [currentTriggerIndex, setCurrentTriggerIndex] = useState<number>(0);
   const areaProps = { currentTriggerIndex, setCurrentTriggerIndex, triggers };
   return (
@@ -14,5 +13,3 @@ const ControlContainer14 = () => {
     </ClientOnly>
   );
 };
-
-export default ControlContainer14;

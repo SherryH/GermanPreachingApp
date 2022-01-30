@@ -1,5 +1,6 @@
-import { SpeechRecognitionArea } from '../../components/SpeechRecognitionArea';
-import ControlContainer14 from './ControlContainer14';
+import { SharedControlContainer } from '../../components/SharedControlContainer';
+import { triggers } from '../../data/lesson14';
+
 export default function Lecture10() {
   //lecture 14
   return (
@@ -19,7 +20,7 @@ export default function Lecture10() {
       <p>A | Warum hast du die Schokolade nicht gegessen?</p>
       <p>B | Weil ich die Schokolade nicht gegessen habe.</p>
       <div className="controlWrapper">
-        <ControlContainer14 />
+        <SharedControlContainer triggers={triggers} />
       </div>
     </>
   );
