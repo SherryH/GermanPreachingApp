@@ -7,7 +7,6 @@ export default function Lecture10() {
       <div className="controlWrapper">
         <ControlContainer10 />
       </div>
-      <SpeechRecognitionArea />
     </>
   );
 }

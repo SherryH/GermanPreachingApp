@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { SpeechRecognitionArea } from '../SpeechRecognitionArea';
 import styles from './Layout.module.css';
 export const Layout = ({ children, ...rest }) => (
   <div className={styles.container}>
@@ -11,7 +12,15 @@ export const Layout = ({ children, ...rest }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main className={styles.main} {...rest}>
-      {children}
+      <>
+        {children}
+        <SpeechRecognitionArea />
+      </>
     </main>
+    <footer>
+      <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
+        Made with 🎤 by Sherry Hsu
+      </a>
+    </footer>
   </div>
 );

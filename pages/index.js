@@ -26,14 +26,7 @@ export default function Home() {
         <div className="controlWrapper">
           <ControlContainer />
         </div>
-        <SpeechRecognitionArea />
       </main>
-
-      <footer>
-        <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
-          Made with 🎤 by Sherry Hsu
-        </a>
-      </footer>
     </div>
   );
 }
