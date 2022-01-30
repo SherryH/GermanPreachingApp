@@ -1,13 +1,12 @@
-import { useEffect, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
-import styles from '../../components/ControlContainer/Controls.module.css';
-import { triggers } from '../../data/lesson14';
 import { TriggerAreaView } from './TriggerAreaView';
 import { useTriggerArea } from './useTriggerArea';
 
-const TriggerArea14 = ({
+export const TriggerArea = ({
   currentTriggerIndex,
   setCurrentTriggerIndex,
+  triggers,
 }: Props) => {
   const { generateTriggers, currentTriggers } = useTriggerArea({
     currentTriggerIndex,
@@ -26,6 +25,5 @@ const TriggerArea14 = ({
 type Props = {
   currentTriggerIndex: number;
   setCurrentTriggerIndex: Dispatch<SetStateAction<number>>;
+  triggers: string[];
 };
-
-export default TriggerArea14;
