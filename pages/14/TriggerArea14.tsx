@@ -1,41 +1,24 @@
-import { Dispatch, SetStateAction } from 'react';
+import { useEffect, Dispatch, SetStateAction } from 'react';
 
 import styles from '../../components/ControlContainer/Controls.module.css';
-import { useEffect } from 'react';
 import { triggers } from '../../data/lesson14';
+import { TriggerAreaView } from './TriggerAreaView';
+import { useTriggerArea } from './useTriggerArea';
 
 const TriggerArea14 = ({
   currentTriggerIndex,
   setCurrentTriggerIndex,
 }: Props) => {
-  useEffect(() => {
-    if (currentTriggerIndex === triggers.length) {
-      alert(
-        'Preaching Finished! Congrats! 👏👍🌟 \nPlease refresh the page to restart.'
-      );
-    }
-  }, [currentTriggerIndex]);
-
-  const generateTriggers = () => {
-    if (currentTriggerIndex === triggers.length) return;
-    setCurrentTriggerIndex(
-      (currentTriggerIndex: number): number => currentTriggerIndex + 1
-    );
-  };
-  const currentTriggers = triggers[currentTriggerIndex];
+  const { generateTriggers, currentTriggers } = useTriggerArea({
+    currentTriggerIndex,
+    setCurrentTriggerIndex,
+    triggers,
+  });
   return (
-    <>
-      <button
-        type="button"
-        className={styles.button}
-        onClick={generateTriggers}
-      >
-        Trigger
-      </button>
-      <div className={styles.card}>
-        <p>{currentTriggers}</p>
-      </div>
-    </>
+    <TriggerAreaView
+      generateTriggers={generateTriggers}
+      currentTriggers={currentTriggers}
+    />
   );
 };
 
