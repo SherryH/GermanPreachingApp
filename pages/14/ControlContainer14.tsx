@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ClientOnly } from '../../components/ClientOnly';
-import AnswerArea14 from './AnswerArea14';
 import { triggers } from '../../data/lesson14';
 import { TriggerArea } from '../../components/TriggerArea';
+import { AnswerArea } from '../../components/AnswerArea';
 
 const ControlContainer14 = () => {
   const [currentTriggerIndex, setCurrentTriggerIndex] = useState<number>(0);
@@ -10,7 +10,7 @@ const ControlContainer14 = () => {
   return (
     <ClientOnly>
       <TriggerArea {...areaProps} />
-      <AnswerArea14 currentTriggerIndex={currentTriggerIndex} />
+      <AnswerArea currentTriggerIndex={currentTriggerIndex} />
     </ClientOnly>
   );
 };
