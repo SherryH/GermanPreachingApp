@@ -5,6 +5,7 @@ export default function Lecture10() {
   //lecture 14
   return (
     <>
+      <h1>Lektion 14 Preaching Exercise</h1>
       <p>
         Once you have learned the past forms of "essen" you'll be able to
         construct the past forms of the following verbs easily:
