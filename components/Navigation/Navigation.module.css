@@ -10,10 +10,19 @@
 
 .navItem {
   width: 250px;
-  background-color: brown;
+  background-color: var(--primaryColor);
   list-style-type: none;
-  padding: 0;
+  padding: 40;
   margin: 0;
   height: 100vh;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.navItem * + * {
+  padding-top: 12px;
+}
+
+.navItem:first-child {
+  padding-top: 16px;
 }
