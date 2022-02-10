@@ -1,0 +1,19 @@
+.sidebarWrapper {
+  position: relative;
+}
+
+.navWrapper {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+.navItem {
+  width: 250px;
+  background-color: brown;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-size: 2rem;
+}

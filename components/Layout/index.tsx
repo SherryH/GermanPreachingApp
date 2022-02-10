@@ -12,13 +12,15 @@ export const Layout = ({ children, ...rest }) => (
       />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Navigation />
-    <main className={styles.main} {...rest}>
-      <>
-        {children}
-        <SpeechRecognitionArea />
-      </>
-    </main>
+    <section className={styles.mainSection}>
+      <Navigation />
+      <main className={styles.main} {...rest}>
+        <>
+          {children}
+          <SpeechRecognitionArea />
+        </>
+      </main>
+    </section>
     <footer>
       <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
         Made with 🎤 by Sherry Hsu
