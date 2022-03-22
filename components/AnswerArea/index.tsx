@@ -1,8 +1,7 @@
-import { answers } from '../../data/lesson14';
 import { AnswerAreaView } from './AnswerAreaView';
 import { useAnswerArea } from './useAnswerArea';
 
-export const AnswerArea = ({ currentTriggerIndex }: Props) => {
+export const AnswerArea = ({ currentTriggerIndex, answers }: Props) => {
   const { clickHandler, buttonClickHandler, showAnswer, answerSentences } =
     useAnswerArea({ answers, currentTriggerIndex });
 
@@ -18,4 +17,5 @@ export const AnswerArea = ({ currentTriggerIndex }: Props) => {
 
 type Props = {
   currentTriggerIndex: number;
+  answers: string[][];
 };

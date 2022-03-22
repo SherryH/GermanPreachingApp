@@ -1,7 +1,7 @@
 import { SharedControlContainer } from '../../components/SharedControlContainer';
-import { triggers } from '../../data/lesson14';
+import { triggers, answers } from '../../data/lesson14';
 
-export default function Lecture10() {
+export default function Lecture14() {
   //lecture 14
   return (
     <>
@@ -21,7 +21,7 @@ export default function Lecture10() {
       <p>A | Warum hast du die Schokolade nicht gegessen?</p>
       <p>B | Weil ich die Schokolade nicht gegessen habe.</p>
       <div className="controlWrapper">
-        <SharedControlContainer triggers={triggers} />
+        <SharedControlContainer triggers={triggers} answers={answers} />
       </div>
     </>
   );

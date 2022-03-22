@@ -3,13 +3,13 @@ import { ClientOnly } from '../../components/ClientOnly';
 import { TriggerArea } from '../../components/TriggerArea';
 import { AnswerArea } from '../../components/AnswerArea';
 
-export const SharedControlContainer = ({ triggers }) => {
+export const SharedControlContainer = ({ triggers, answers }) => {
   const [currentTriggerIndex, setCurrentTriggerIndex] = useState<number>(0);
   const areaProps = { currentTriggerIndex, setCurrentTriggerIndex, triggers };
   return (
     <ClientOnly>
       <TriggerArea {...areaProps} />
-      <AnswerArea currentTriggerIndex={currentTriggerIndex} />
+      <AnswerArea currentTriggerIndex={currentTriggerIndex} answers={answers} />
     </ClientOnly>
   );
 };
