@@ -9,7 +9,7 @@ export const Navigation = () => {
       <nav className={styles.navWrapper}>
         <ul className={styles.navItem}>
           <li>
-            <a href={`${window?.location?.origin}/4`}>Lesson 4 (broken)</a>
+            <a href={`${window.location.origin}/4`}>Lesson 4 (broken)</a>
           </li>
           <li>
             <a href={`${window.location.origin}/10`}>Lesson 10</a>

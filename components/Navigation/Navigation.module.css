@@ -1,5 +1,6 @@
 .sidebarWrapper {
   position: relative;
+  background-color: var(--primaryColor);
 }
 
 .navWrapper {
@@ -10,9 +11,8 @@
 
 .navItem {
   width: 250px;
-  background-color: var(--primaryColor);
   list-style-type: none;
-  padding: 40;
+  padding: 24px;
   margin: 0;
   height: 100vh;
   font-size: 2.5rem;
