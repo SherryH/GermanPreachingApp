@@ -27,7 +27,14 @@ a {
   --primaryHoverColor: #dd7c9e;
   --secondaryColor: #f5dfe6;
   --bgColor: #5b6270;
+  --sidebarWidth: 250px;
   font-size: 16px;
+
+  /* Navigation */
+  --showHamburger: visible;
+  @media (max-width: 500px) {
+    --showHamburger: hidden;
+  }
 }
 
 h1,

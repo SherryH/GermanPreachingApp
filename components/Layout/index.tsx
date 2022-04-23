@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Navigation } from '../Navigation';
+import { NavigationTop } from '../NavigationTop';
 import { SpeechRecognitionArea } from '../SpeechRecognitionArea';
 import styles from './Layout.module.css';
 export const Layout = ({ children, ...rest }) => (
@@ -13,6 +14,7 @@ export const Layout = ({ children, ...rest }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <section className={styles.mainSection}>
+      <NavigationTop />
       <Navigation />
       <main className={styles.main} {...rest}>
         <>

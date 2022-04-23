@@ -1,16 +1,17 @@
 .sidebarWrapper {
+  grid-area: sidebar;
   position: relative;
   background-color: var(--primaryColor);
 }
 
 .navWrapper {
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
 }
 
 .navItem {
-  width: 250px;
+  width: var(--sidebarWidth);
   list-style-type: none;
   padding: 24px;
   margin: 0;
