@@ -1,3 +1,4 @@
+import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { HamburgerIcon } from '../Icon/HamburgerIcon';
 
@@ -18,8 +19,10 @@ const StyledHamburgerWrapper = styled.div`
   visibility: var(--showHamburger);
 `;
 
-export const NavigationTop = () => (
-  <StyledContainer>
+type NavigationTopTypes = PropsWithChildren<{ onClick: () => void }>;
+
+export const NavigationTop = ({ onClick }: NavigationTopTypes) => (
+  <StyledContainer onClick={onClick}>
     <StyledHamburgerWrapper>
       <HamburgerIcon />
     </StyledHamburgerWrapper>
