@@ -3,16 +3,16 @@ import { NavigationSide } from './NavigationSide';
 import { NavigationTop } from './NavigationTop';
 
 export const Navigation = () => {
-  const [showNavigationSide, setShowNavigationSide] = useState(true);
+  const [showMobileSideNav, setShowMobileSideNav] = useState(false);
   const toggleSide = () => {
-    console.log('click');
-
-    setShowNavigationSide((isShown) => !isShown);
+    setShowMobileSideNav((isShown) => {
+      return !isShown;
+    });
   };
   return (
     <>
       <NavigationTop onClick={toggleSide} />
-      <NavigationSide showNavigationSide />
+      <NavigationSide showMobileSideNav={showMobileSideNav} />
     </>
   );
 };

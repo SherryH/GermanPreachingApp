@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 html {
   /* Navigation */
-  --showHamburger: visible;
+  --showHamburger: hidden;
   @media (max-width: 500px) {
-    --showHamburger: hidden;
+    --showHamburger: visible;
   }
 }
 `;

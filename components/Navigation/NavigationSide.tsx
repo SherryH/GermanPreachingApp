@@ -1,13 +1,28 @@
 import type { PropsWithChildren } from 'react';
 import styles from './Navigation.module.css';
 import styled from 'styled-components';
+import { hideElement } from '../../styles/cssUtils';
 
-type NavigationSideTypes = PropsWithChildren<{ showNavigationSide: boolean }>;
+type NavigationSideTypes = PropsWithChildren<{
+  showMobileSideNav: boolean;
+}>;
 
-const SidebarWrapper = styled.aside`
+const SidebarWrapper = styled.aside<NavigationSideTypes>`
   grid-area: sidebar;
   position: relative;
   background-color: var(--primaryColor);
+
+  ${({ showMobileSideNav }) => {
+    // hide sidebar when window resizes to be small
+    // toggle sidebar on click hamburger menu
+    console.log({ showMobileSideNav });
+    return `
+    @media (max-width: 500px) {
+      ${hideElement}
+      ${showMobileSideNav ? `position: relative` : hideElement}
+    }
+    `;
+  }}
 `;
 
 const NavWrapper = styled.nav`
@@ -34,13 +49,13 @@ const NavItem = styled.ul`
   }
 `;
 
-export const NavigationSide = ({ showNavigationSide }: NavigationSideTypes) => {
+export const NavigationSide = ({ showMobileSideNav }: NavigationSideTypes) => {
   if (typeof window === 'undefined') {
     return null;
   }
 
   return (
-    <SidebarWrapper>
+    <SidebarWrapper showMobileSideNav={showMobileSideNav}>
       <NavWrapper>
         <NavItem>
           <li>
