@@ -12,12 +12,12 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
   position: relative;
   background-color: var(--primaryColor);
 
-  ${({ showMobileSideNav }) => {
+  ${({ showMobileSideNav, theme: { bp, maxWidth } }) => {
     // hide sidebar when window resizes to be small
     // toggle sidebar on click hamburger menu
     console.log({ showMobileSideNav });
     return `
-    @media (max-width: 500px) {
+    ${maxWidth(bp.md)} {
       ${hideElement}
       ${showMobileSideNav ? `position: relative` : hideElement}
     }
