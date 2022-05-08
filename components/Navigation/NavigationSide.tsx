@@ -11,6 +11,7 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
   grid-area: sidebar;
   position: relative;
   background-color: var(--primaryColor);
+  width: var(--sidebarWidth);
 
   ${({ showMobileSideNav, theme: { bp, maxWidth } }) => {
     // hide sidebar when window resizes to be small
@@ -32,7 +33,6 @@ const NavWrapper = styled.nav`
 `;
 
 const NavItem = styled.ul`
-  width: var(--sidebarWidth);
   list-style-type: none;
   padding: 24px;
   margin: 0;
