@@ -1,5 +1,4 @@
 .container {
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,10 +60,26 @@
 
 .mainSection {
   display: grid;
-  grid-template-columns: 300px auto;
-  grid-template-rows: 32px 1fr;
   grid-template-areas:
-    'header header'
-    'sidebar main';
-  min-height: 100%;
+    'header'
+    'main'
+    'footer';
+  min-height: calc(100vh - var(--navHeight));
+}
+
+@media (min-width: 768px) {
+  .mainSection {
+    display: grid;
+    grid-template-columns: var(--sidebarWidth) auto;
+    grid-template-areas:
+      'header header'
+      'sidebar main'
+      'footer footer';
+    min-height: 100vh;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background-color: aquamarine;
 }

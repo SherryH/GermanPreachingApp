@@ -21,7 +21,7 @@ export const Layout = ({ children, ...rest }) => (
         </>
       </main>
     </section>
-    <footer>
+    <footer className={styles.footer}>
       <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
         Made with 🎤 by Sherry Hsu
       </a>

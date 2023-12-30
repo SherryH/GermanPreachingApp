@@ -8,6 +8,7 @@ const StyledContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  height: var(--navHeight);
 `;
 
 const StyledHamburgerWrapper = styled.div`
@@ -19,12 +20,10 @@ const StyledHamburgerWrapper = styled.div`
   visibility: var(--showHamburger);
 `;
 
-type NavigationTopTypes = PropsWithChildren<{ onClick: () => void }>;
+type NavigationTopTypes = PropsWithChildren<{}>;
 
-export const NavigationTop = ({ onClick }: NavigationTopTypes) => (
-  <StyledContainer onClick={onClick}>
-    <StyledHamburgerWrapper>
-      <HamburgerIcon />
-    </StyledHamburgerWrapper>
+export const NavigationTop = ({ children }: NavigationTopTypes) => (
+  <StyledContainer>
+    <StyledHamburgerWrapper>{children}</StyledHamburgerWrapper>
   </StyledContainer>
 );

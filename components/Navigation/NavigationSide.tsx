@@ -8,28 +8,22 @@ type NavigationSideTypes = PropsWithChildren<{
 }>;
 
 const SidebarWrapper = styled.aside<NavigationSideTypes>`
-  grid-area: sidebar;
-  position: relative;
-  background-color: var(--primaryColor);
-  width: var(--sidebarWidth);
-
-  ${({ showMobileSideNav, theme: { bp, maxWidth } }) => {
-    // hide sidebar when window resizes to be small
-    // toggle sidebar on click hamburger menu
-    console.log({ showMobileSideNav });
-    return `
-    ${maxWidth(bp.md)} {
-      ${hideElement}
-      ${showMobileSideNav ? `position: relative` : hideElement}
-    }
-    `;
-  }}
-`;
-
-const NavWrapper = styled.nav`
   position: absolute;
-  top: 0px;
+  background-color: var(--primaryColor);
+  top: var(--navHeight);
   left: 0px;
+  grid-area: sidebar;
+  width: var(--sidebarWidth);
+  min-height: calc(100vh - var(--navHeight));
+  transform: ${({ showMobileSideNav }) =>
+    showMobileSideNav ? 'translateX(0)' : 'translateX(-110%)'};
+  transition: all 0.3s linear;
+
+  ${({ theme: { bp, minWidth } }) => `
+    ${minWidth(bp.md)} {
+      transform: translateX(0);
+    }
+  `};
 `;
 
 const NavItem = styled.ul`
@@ -56,25 +50,23 @@ export const NavigationSide = ({ showMobileSideNav }: NavigationSideTypes) => {
 
   return (
     <SidebarWrapper showMobileSideNav={showMobileSideNav}>
-      <NavWrapper>
-        <NavItem>
-          <li>
-            <a href={`${window.location.origin}/4`}>Lesson 4 (broken)</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/10`}>Lesson 10</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/14`}>Lesson 14</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/15`}>Lesson 15</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/16`}>Lesson 16</a>
-          </li>
-        </NavItem>
-      </NavWrapper>
+      <NavItem>
+        <li>
+          <a href={`${window.location.origin}/4`}>Lesson 4 (broken)</a>
+        </li>
+        <li>
+          <a href={`${window.location.origin}/10`}>Lesson 10</a>
+        </li>
+        <li>
+          <a href={`${window.location.origin}/14`}>Lesson 14</a>
+        </li>
+        <li>
+          <a href={`${window.location.origin}/15`}>Lesson 15</a>
+        </li>
+        <li>
+          <a href={`${window.location.origin}/16`}>Lesson 16</a>
+        </li>
+      </NavItem>
     </SidebarWrapper>
   );
 };
