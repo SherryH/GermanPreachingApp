@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-import { HamburgerIcon } from '../Icon/HamburgerIcon';
 
 const StyledContainer = styled.div`
   grid-area: header;

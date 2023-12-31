@@ -15,16 +15,19 @@ export const Layout = ({ children, ...rest }) => (
     <section className={styles.mainSection}>
       <Navigation />
       <main className={styles.main} {...rest}>
-        <>
+        <div className={styles.contentSection}>
           {children}
           <SpeechRecognitionArea />
-        </>
+          <footer className={styles.footer}>
+            <a
+              href="https://github.com/SherryH/GermanPreachingApp"
+              target="_blank"
+            >
+              Made with 🎤 by Sherry Hsu
+            </a>
+          </footer>
+        </div>
       </main>
     </section>
-    <footer className={styles.footer}>
-      <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
-        Made with 🎤 by Sherry Hsu
-      </a>
-    </footer>
   </div>
 );

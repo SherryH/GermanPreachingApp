@@ -8,13 +8,12 @@ type NavigationSideTypes = PropsWithChildren<{
 }>;
 
 const SidebarWrapper = styled.aside<NavigationSideTypes>`
-  position: absolute;
+  position: sticky;
   background-color: var(--primaryColor);
   top: var(--navHeight);
   left: 0px;
   grid-area: sidebar;
   width: var(--sidebarWidth);
-  min-height: calc(100vh - var(--navHeight));
   transform: ${({ showMobileSideNav }) =>
     showMobileSideNav ? 'translateX(0)' : 'translateX(-110%)'};
   transition: all 0.3s linear;

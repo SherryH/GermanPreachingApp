@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { NavigationSide } from './NavigationSide';
 import { NavigationTop } from './NavigationTop';
-import { HamburgerIcon } from '../Icon/HamburgerIcon';
+import { HamburgerButton } from './HamburgerButton';
 
 export const Navigation = () => {
   const [showMobileSideNav, setShowMobileSideNav] = useState(false);
@@ -13,9 +13,7 @@ export const Navigation = () => {
   return (
     <>
       <NavigationTop>
-        <button onClick={toggleSide}>
-          <HamburgerIcon />
-        </button>
+        <HamburgerButton onClick={toggleSide} />
       </NavigationTop>
       <NavigationSide showMobileSideNav={showMobileSideNav} />
     </>
