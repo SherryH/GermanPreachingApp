@@ -8,7 +8,7 @@ type NavigationSideTypes = PropsWithChildren<{
 }>;
 
 const SidebarWrapper = styled.aside<NavigationSideTypes>`
-  position: sticky;
+  position: absolute;
   background-color: var(--primaryColor);
   top: var(--navHeight);
   left: 0px;
@@ -19,7 +19,8 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
   transition: all 0.3s linear;
 
   ${({ theme: { bp, minWidth } }) => `
-    ${minWidth(bp.md)} {
+    ${minWidth(bp.lg)} {
+      position: sticky;
       transform: translateX(0);
     }
   `};
