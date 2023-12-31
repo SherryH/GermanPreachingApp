@@ -12,7 +12,7 @@
   overflow: auto;
   /* inner grid for content */
   display: grid;
-  grid-template-columns: 1fr minmax(0, 1400px) 1fr;
+  grid-template-columns: minmax(50px, 1fr) minmax(0, 800px) minmax(50px, 1fr);
 }
 
 .controlWrapper {
@@ -64,7 +64,7 @@
     'main';
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .mainSection {
     display: grid;
     grid-template-columns: var(--sidebarWidth) auto;
@@ -73,11 +73,9 @@
       'sidebar main';
   }
 }
-
 .contentSection {
   grid-column: 2/3;
 }
-
 .footer {
   grid-area: footer;
   display: flex;

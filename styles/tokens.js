@@ -2,6 +2,7 @@
 export const bp = {
   sm: '415px', // smaller than 415
   md: '768px', // between 415 to 768
+  lg: '1024px', // between 768 to 1024
 };
 
 // https://medium.flatstack.com/how-to-make-media-queries-strings-in-styled-components-shorter-and-more-reliable-c78bcce13fc8

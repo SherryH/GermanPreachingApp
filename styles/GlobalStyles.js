@@ -5,7 +5,7 @@ html {
   /* Navigation */
   --showHamburger: hidden;
   ${({ theme: { bp, maxWidth } }) => `
-    ${maxWidth(bp.md)}{
+    ${maxWidth(bp.lg)}{
       --showHamburger: visible;  
     }
   `} 
