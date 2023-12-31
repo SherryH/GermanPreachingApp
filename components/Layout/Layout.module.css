@@ -9,10 +9,10 @@
   flex: 1;
   align-items: baseline;
   font-size: 1rem;
-  overflow: auto;
   /* inner grid for content */
   display: grid;
-  grid-template-columns: minmax(50px, 1fr) minmax(0, 800px) minmax(50px, 1fr);
+  grid-template-columns: minmax(20px, 1fr) minmax(400px, 2fr) minmax(20px, 1fr);
+  max-width: calc(100vw - var(--sidebarWidth));
 }
 
 .controlWrapper {

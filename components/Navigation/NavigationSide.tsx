@@ -21,12 +21,17 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
   ${({ theme: { bp, minWidth } }) => `
     ${minWidth(bp.lg)} {
       position: sticky;
+      top:var(--navHeight);
       transform: translateX(0);
     }
-  `};
+    `};
 `;
 
 const NavItem = styled.ul`
+  // sticky needed here for the sticky sidebar to work
+  position: sticky;
+  top: var(--navHeight);
+
   list-style-type: none;
   padding: 24px;
   margin: 0;

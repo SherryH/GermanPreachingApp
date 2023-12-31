@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const StyledContainer = styled.div`
   grid-area: header;
   background: var(--secondaryColor);
-  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   height: var(--navHeight);
