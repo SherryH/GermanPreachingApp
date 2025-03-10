@@ -1,6 +1,8 @@
 import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { HamburgerIcon } from '../Icon/HamburgerIcon';
+import { CrossIcon } from '../Icon/CrossIcon';
+import IconButton from '../Icon/IconButton';
 
 const StyledContainer = styled.div`
   grid-area: header;
@@ -12,19 +14,34 @@ const StyledContainer = styled.div`
 
 const StyledHamburgerWrapper = styled.div`
   width: var(--sidebarWidth);
+  height: 100%;
   display: flex;
   justify-content: center;
-
+  align-items: center;
   /*Toggle hamburger*/
   visibility: var(--showHamburger);
 `;
 
-type NavigationTopTypes = PropsWithChildren<{ onClick: () => void }>;
+type NavigationTopTypes = PropsWithChildren<{
+  onClick: () => void;
+  showMobileSideNav: boolean;
+}>;
 
-export const NavigationTop = ({ onClick }: NavigationTopTypes) => (
+export const NavigationTop = ({
+  onClick,
+  showMobileSideNav,
+}: NavigationTopTypes) => (
   <StyledContainer onClick={onClick}>
     <StyledHamburgerWrapper>
-      <HamburgerIcon />
+      {showMobileSideNav ? (
+        <IconButton>
+          <CrossIcon />
+        </IconButton>
+      ) : (
+        <IconButton>
+          <HamburgerIcon />
+        </IconButton>
+      )}
     </StyledHamburgerWrapper>
   </StyledContainer>
 );
