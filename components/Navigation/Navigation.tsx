@@ -9,7 +9,6 @@ export const Navigation = () => {
       return !isShown;
     });
   };
-  console.log({ showMobileSideNav });
   return (
     <>
       <NavigationTop

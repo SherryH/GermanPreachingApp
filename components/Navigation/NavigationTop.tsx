@@ -5,7 +5,6 @@ import { CrossIcon } from '../Icon/CrossIcon';
 import IconButton from '../Icon/IconButton';
 
 const StyledContainer = styled.div`
-  grid-area: header;
   background: var(--secondaryColor);
   width: 100%;
   display: flex;

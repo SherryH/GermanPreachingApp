@@ -34,3 +34,10 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## TODO:
+
+- Connect with Google Spreadsheet to fetch data
+- Fix the layout. Don't use the grid. Redesign the side nav navigation. Align the footer and content body
+- Remove the scrollbar on the page.
+- Make the Trigger Answer section stationary. The changing content does not shift siblings positions

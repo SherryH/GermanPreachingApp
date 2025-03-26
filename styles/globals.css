@@ -8,6 +8,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background-color: var(--bgColor);
   color: var(--primaryTextColor);
+  font-size: 16px;
 }
 
 a {

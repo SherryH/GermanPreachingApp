@@ -27,9 +27,9 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
 `;
 
 const NavWrapper = styled.nav`
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  position: fixed;
+  inset: 0 60% 0 0;
+  background: var(--primaryColor);
 `;
 
 const NavItem = styled.ul`
@@ -37,7 +37,7 @@ const NavItem = styled.ul`
   padding: 24px;
   margin: 0;
   height: 100vh;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: black;
 
   & * + * {
