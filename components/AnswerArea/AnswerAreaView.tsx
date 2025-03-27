@@ -27,7 +27,7 @@ export const AnswerAreaView = ({
       onClick={clickHandler}
     >
       {answerSentences?.map((ans) => (
-        <p>{ans}</p>
+        <p key={ans}>{ans}</p>
       ))}
     </div>
   </>
