@@ -51,10 +51,6 @@ const NavItem = styled.ul`
 `;
 
 export const NavigationSide = ({ showMobileSideNav }: NavigationSideTypes) => {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
   return (
     <SidebarWrapper showMobileSideNav={showMobileSideNav}>
       <NavWrapper>

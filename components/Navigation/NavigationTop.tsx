@@ -38,19 +38,23 @@ type NavigationTopTypes = PropsWithChildren<{
 export const NavigationTop = ({
   onClick,
   showMobileSideNav,
-}: NavigationTopTypes) => (
-  <StyledContainer onClick={onClick}>
-    <StyledHamburgerWrapper>
-      {showMobileSideNav ? (
-        <IconButton>
-          <CrossIcon />
-        </IconButton>
-      ) : (
-        <IconButton>
-          <HamburgerIcon />
-        </IconButton>
-      )}
-    </StyledHamburgerWrapper>
-    <LektionHeader>Lektion</LektionHeader>
-  </StyledContainer>
-);
+}: NavigationTopTypes) => {
+  const lesson = window.location.pathname.replace('/', '');
+  return (
+    <StyledContainer onClick={onClick}>
+      {console.log(window.location.pathname)}
+      <StyledHamburgerWrapper>
+        {showMobileSideNav ? (
+          <IconButton>
+            <CrossIcon />
+          </IconButton>
+        ) : (
+          <IconButton>
+            <HamburgerIcon />
+          </IconButton>
+        )}
+      </StyledHamburgerWrapper>
+      <LektionHeader>Lektion {lesson}</LektionHeader>
+    </StyledContainer>
+  );
+};

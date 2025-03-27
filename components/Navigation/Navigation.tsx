@@ -3,6 +3,9 @@ import { NavigationSide } from './NavigationSide';
 import { NavigationTop } from './NavigationTop';
 
 export const Navigation = () => {
+  if (typeof window === 'undefined') {
+    return null;
+  }
   const [showMobileSideNav, setShowMobileSideNav] = useState(true);
   const toggleSide = () => {
     setShowMobileSideNav((isShown) => {
