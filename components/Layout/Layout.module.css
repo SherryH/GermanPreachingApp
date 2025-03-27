@@ -14,17 +14,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: baseline;
-  font-size: 1.5rem;
+  /* max-width: calc(100% - var(--sidebarWidth)); */
 }
 
-.controlWrapper {
+/* .controlWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 1400px;
-  margin-top: 3rem;
-  width: 1400px;
-}
+  margin-top: 1rem;
+  /* width: 1400px; 
+} */
 
 .button {
   padding: 12px 16px;

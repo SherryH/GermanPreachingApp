@@ -46,7 +46,7 @@ h1 {
 
 p {
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 
@@ -56,9 +56,11 @@ footer {
 
 .controlWrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   max-width: 1400px;
   margin-top: 1rem;
-  width: 1400px;
+  flex-direction: column;
+  /* width: 1400px; */
 }

@@ -1,5 +1,5 @@
 .speechArea {
-  min-width: 1400px;
+  /* min-width: 1400px; */
   min-height: 500px;
   height: 500px;
   background-color: var(--secondaryColor);
