@@ -1,4 +1,5 @@
 import type { PropsWithChildren } from 'react';
+import Link from 'next/link';
 import styles from './Navigation.module.css';
 import styled from 'styled-components';
 import { hideElement } from '../../styles/cssUtils';
@@ -59,16 +60,16 @@ export const NavigationSide = ({ showMobileSideNav }: NavigationSideTypes) => {
       <NavWrapper>
         <NavItem>
           <li>
+            <Link href="10"> Lesson 10</Link>
+          </li>
+          <li>
+            <Link href="14"> Lesson 14</Link>
+          </li>
+          <li>
+            <Link href="15"> Lesson 15</Link>
+          </li>
+          <li>
             <a href={`${window.location.origin}/4`}>Lesson 4 (broken)</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/10`}>Lesson 10</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/14`}>Lesson 14</a>
-          </li>
-          <li>
-            <a href={`${window.location.origin}/15`}>Lesson 15</a>
           </li>
         </NavItem>
       </NavWrapper>
