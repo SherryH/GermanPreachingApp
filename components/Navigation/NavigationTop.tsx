@@ -5,11 +5,19 @@ import { CrossIcon } from '../Icon/CrossIcon';
 import IconButton from '../Icon/IconButton';
 
 const StyledContainer = styled.div`
-  grid-area: header;
+  grid-column: header-left / header-right;
   background: var(--secondaryColor);
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+`;
+
+const LektionHeader = styled.div`
+  padding-right: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
 `;
 
 const StyledHamburgerWrapper = styled.div`
@@ -43,5 +51,6 @@ export const NavigationTop = ({
         </IconButton>
       )}
     </StyledHamburgerWrapper>
+    <LektionHeader>Lektion</LektionHeader>
   </StyledContainer>
 );

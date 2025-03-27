@@ -1,5 +1,4 @@
 .container {
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +63,7 @@
   grid-template-columns: 1fr auto;
   grid-template-rows: 5rem 1fr;
   grid-template-areas:
-    'header header'
+    'header-left header-right'
     'sidebar main';
   min-height: 100%;
 }
