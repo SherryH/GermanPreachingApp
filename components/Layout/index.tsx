@@ -5,10 +5,10 @@ import { SpeechRecognitionArea } from '../SpeechRecognitionArea';
 import styles from './Layout.module.css';
 
 export const Layout = ({ children, ...rest }) => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showMobileSideNav, setShowMobileSideNav] = useState(true);
 
-  const toggleSidebar = (isVisible) => {
-    setShowSidebar(isVisible);
+  const toggleSidebar = () => {
+    setShowMobileSideNav((isVisible) => !isVisible);
   };
 
   return (
@@ -23,10 +23,13 @@ export const Layout = ({ children, ...rest }) => {
       </Head>
       <section
         className={`${styles.mainSection} ${
-          !showSidebar ? styles.sidebarHidden : ''
+          !showMobileSideNav ? styles.sidebarHidden : ''
         }`}
       >
-        <Navigation onSidebarToggle={toggleSidebar} />
+        <Navigation
+          onSidebarToggle={toggleSidebar}
+          showMobileSideNav={showMobileSideNav}
+        />
         <main className={styles.main} {...rest}>
           <>
             {children}
