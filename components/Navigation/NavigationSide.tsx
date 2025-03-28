@@ -28,7 +28,7 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
 `;
 
 const NavWrapper = styled.nav`
-  position: absolute;
+  position: sticky;
   top: 0px;
   left: 0px;
 `;
