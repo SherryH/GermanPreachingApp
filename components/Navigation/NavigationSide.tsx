@@ -20,7 +20,6 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
     console.log({ showMobileSideNav });
     return `
     ${maxWidth(bp.md)} {
-      ${hideElement}
       ${showMobileSideNav ? `position: relative` : hideElement}
     }
     `;

@@ -67,3 +67,10 @@
     'sidebar main';
   min-height: 100%;
 }
+
+.sidebarHidden {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header-left header-right'
+    'main main';
+}

@@ -4,11 +4,16 @@ import { NavigationTop } from './NavigationTop';
 import { ClientOnly } from '../ClientOnly';
 import { HamburgerMenu } from './HamburgerMenu';
 
-export const Navigation = () => {
+export const Navigation = ({ onSidebarToggle }) => {
   const [showMobileSideNav, setShowMobileSideNav] = useState(true);
   const toggleSide = () => {
     setShowMobileSideNav((isShown) => {
-      return !isShown;
+      const newState = !isShown;
+      // Notify parent component about sidebar visibility change
+      if (onSidebarToggle) {
+        onSidebarToggle(newState);
+      }
+      return newState;
     });
   };
   console.log({ showMobileSideNav });
