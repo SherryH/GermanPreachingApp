@@ -39,6 +39,7 @@ const NavItem = styled.ul`
   height: 100vh;
   font-size: 1.5rem;
   color: black;
+  text-align: right;
 
   & * + * {
     padding-top: 12px;
