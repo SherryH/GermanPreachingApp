@@ -64,9 +64,6 @@ export const NavigationSide = ({ showMobileSideNav }: NavigationSideTypes) => {
           <li>
             <Link href="15"> Lesson 15</Link>
           </li>
-          <li>
-            <a href={`${window.location.origin}/4`}>Lesson 4 (broken)</a>
-          </li>
         </NavItem>
       </NavWrapper>
     </SidebarWrapper>
