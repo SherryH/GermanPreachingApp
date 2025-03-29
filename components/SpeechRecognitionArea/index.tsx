@@ -4,8 +4,10 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { useSpeechRecognition } from './useSpeechRecognition';
 import { MirrorArea } from './MirrorArea';
 import IconButton from '../Icon/IconButton';
+import { useRef, useEffect } from 'react';
 
 export const SpeechRecognitionArea = () => {
+  const TextAreaRef = useRef<HTMLTextAreaElement>(null);
   const {
     startTranscribing,
     isRecognising,
@@ -28,12 +30,18 @@ export const SpeechRecognitionArea = () => {
     setSpeechArea(e.target.value);
   };
 
+  useEffect(() => {
+    if (TextAreaRef.current) {
+      TextAreaRef.current.scrollTop = TextAreaRef.current.scrollHeight;
+    }
+  }, [speechArea]);
+
   return (
     <div className={styles.speechArea}>
       <MirrorArea mirrorArea={mirrorArea} />
       <textarea
+        ref={TextAreaRef}
         className={styles.textBox}
-        contentEditable
         value={speechArea}
         onChange={speechAreaChangeHandler}
       />

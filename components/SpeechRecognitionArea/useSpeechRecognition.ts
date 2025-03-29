@@ -34,12 +34,10 @@ export const useSpeechRecognition = () => {
 
     // Set up event handlers
     recognitionRef.current.onstart = function () {
-      console.log('onstart====');
       setIsRecognising(true);
     };
 
     recognitionRef.current.onend = function () {
-      console.log('onend*****');
       setMirrorArea('');
       setIsRecognising(false);
     };
@@ -61,7 +59,9 @@ export const useSpeechRecognition = () => {
         if (word.results[x].isFinal) {
           console.log('isFinal', transcript);
           setSpeechArea((speechArea) => {
-            return speechArea + transcript;
+            // Add a newline character before the transcript if there's already text
+            const prefix = speechArea.length > 0 ? '\n' : '';
+            return speechArea + prefix + transcript;
           });
         } else {
           interimTranscript = interimTranscript + transcript;
