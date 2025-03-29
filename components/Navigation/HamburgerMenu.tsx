@@ -20,19 +20,27 @@ type HamburgerMenuTypes = PropsWithChildren<{
   showMobileSideNav: boolean;
 }>;
 
+const StyledInnerWrapper = styled.div`
+  position: fixed;
+  top: 15px;
+  left: 24px;
+`;
+
 export const HamburgerMenu = ({
   onClick,
   showMobileSideNav,
 }: HamburgerMenuTypes) => (
   <StyledHamburgerWrapper>
-    {showMobileSideNav ? (
-      <IconButton onClick={onClick}>
-        <CrossIcon />
-      </IconButton>
-    ) : (
-      <IconButton onClick={onClick}>
-        <HamburgerIcon />
-      </IconButton>
-    )}
+    <StyledInnerWrapper>
+      {showMobileSideNav ? (
+        <IconButton onClick={onClick}>
+          <CrossIcon />
+        </IconButton>
+      ) : (
+        <IconButton onClick={onClick}>
+          <HamburgerIcon />
+        </IconButton>
+      )}
+    </StyledInnerWrapper>
   </StyledHamburgerWrapper>
 );
