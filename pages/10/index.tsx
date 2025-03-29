@@ -30,9 +30,11 @@ export default function Lecture10() {
         You might have noticed that the adjective ending for (n)euter nouns has
         changed. Take a{' '}
       </p>
-      look. Until now we only used "ein-" or "mein-" or "kein-". Now we use
-      "das" and "Welches".
-      <p></p>
+      <p>
+        {' '}
+        look. Until now we only used "ein-" or "mein-" or "kein-". Now we use
+        "das" and "Welches".
+      </p>
       <p>Ich sehe einx altes Kino.</p>
       <p>Ich sehe meinx altes Kino.</p>
       <p>Ich sehe keinx altes Kino.</p>
@@ -40,7 +42,6 @@ export default function Lecture10() {
       <p>Ich sehe das teure Kino.</p>
       <p>Welches teure Kino?</p>
       <p>Dieses teure Kino.</p>
-      <p></p>
       <p>
         To easily remember this change you could learn the following "rule" by
         heart:
