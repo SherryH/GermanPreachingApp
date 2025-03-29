@@ -35,13 +35,16 @@ export const Layout = ({ children, ...rest }) => {
             {children}
             <SpeechRecognitionArea />
           </>
+          <footer>
+            <a
+              href="https://github.com/SherryH/GermanPreachingApp"
+              target="_blank"
+            >
+              Made with 🎤 by Sherry Hsu
+            </a>
+          </footer>
         </main>
       </section>
-      <footer>
-        <a href="https://github.com/SherryH/GermanPreachingApp" target="_blank">
-          Made with 🎤 by Sherry Hsu
-        </a>
-      </footer>
     </div>
   );
 };
