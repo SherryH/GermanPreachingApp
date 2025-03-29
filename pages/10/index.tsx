@@ -4,6 +4,7 @@ export default function Lecture10() {
   //lecture 10
   return (
     <>
+      <h1>Lektion 10 Preaching Exercise</h1>
       <p>Hund - dog | süß - sweet</p>
       <p>A | Siehst du den süßen Hund?</p>
       <p>B | Welchen süßen Hund?</p>
