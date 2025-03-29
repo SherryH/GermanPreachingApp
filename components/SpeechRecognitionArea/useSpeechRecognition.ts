@@ -1,67 +1,57 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
     SpeechRecognition: any;
+    webkitSpeechRecognition: any;
   }
 }
 
-export const SpeechRecognition =
-  typeof window !== 'undefined' &&
-  (window.SpeechRecognition || window.webkitSpeechRecognition);
-
-let recognition;
-if (SpeechRecognition) {
-  recognition = new SpeechRecognition();
-  recognition.lang = 'de-DE';
-  recognition.continuous = true;
-  recognition.interimResults = true;
-  recognition.maxAlternatives = 1;
-}
+export const getSpeechRecognition = () => {
+  if (typeof window === 'undefined') return null;
+  return window.SpeechRecognition || window.webkitSpeechRecognition;
+};
 
 export const useSpeechRecognition = () => {
   const [isRecognising, setIsRecognising] = useState(false);
   const [speechArea, setSpeechArea] = useState('');
   const [mirrorArea, setMirrorArea] = useState('');
+  const recognitionRef = useRef(null);
 
-  function startTranscribing() {
-    if (isRecognising) return;
+  // Initialize recognition instance when component mounts
+  useEffect(() => {
+    const SpeechRecognition = getSpeechRecognition();
+    if (!SpeechRecognition) return;
 
-    try {
-      recognition.start();
-      dictate();
-    } catch (error) {
-      // catch error
-      console.log(
-        `InvalidStateError: Failed to execute 'start' on 'SpeechRecognition': recognition has already started.`
-      );
-    }
-  }
+    // Create a new instance for this component
+    recognitionRef.current = new SpeechRecognition();
 
-  function stopTranscribing() {
-    recognition.stop();
-    setIsRecognising(false);
-  }
+    // Configure the recognition instance
+    recognitionRef.current.lang = 'de-DE';
+    recognitionRef.current.continuous = true;
+    recognitionRef.current.interimResults = true;
+    recognitionRef.current.maxAlternatives = 1;
 
-  function dictate() {
-    recognition.onstart = function () {
+    // Set up event handlers
+    recognitionRef.current.onstart = function () {
       console.log('onstart====');
       setIsRecognising(true);
     };
 
-    recognition.onend = function () {
+    recognitionRef.current.onend = function () {
       console.log('onend*****');
       setMirrorArea('');
       setIsRecognising(false);
-      recognition.stop();
     };
 
-    recognition.onerror = function () {
+    recognitionRef.current.onerror = function () {
       setIsRecognising(false);
-      recognition.abort();
+      if (recognitionRef.current) {
+        recognitionRef.current.abort();
+      }
     };
 
-    recognition.onresult = function (word) {
+    recognitionRef.current.onresult = function (word) {
       let transcript = '';
       let interimTranscript = '';
       for (let x = word.resultIndex; x < word.results.length; x++) {
@@ -79,6 +69,45 @@ export const useSpeechRecognition = () => {
         }
       }
     };
+
+    // Clean up when component unmounts
+    return () => {
+      if (recognitionRef.current) {
+        try {
+          if (isRecognising) {
+            recognitionRef.current.stop();
+          }
+          // Remove all event listeners
+          recognitionRef.current.onstart = null;
+          recognitionRef.current.onend = null;
+          recognitionRef.current.onerror = null;
+          recognitionRef.current.onresult = null;
+          recognitionRef.current = null;
+        } catch (error) {
+          console.error('Error cleaning up speech recognition:', error);
+        }
+      }
+    };
+  }, []);
+
+  function startTranscribing() {
+    if (isRecognising || !recognitionRef.current) return;
+
+    try {
+      recognitionRef.current.start();
+    } catch (error) {
+      // catch error
+      console.log(
+        `InvalidStateError: Failed to execute 'start' on 'SpeechRecognition': recognition has already started.`
+      );
+    }
+  }
+
+  function stopTranscribing() {
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsRecognising(false);
+    }
   }
 
   return {
