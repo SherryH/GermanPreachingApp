@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { useSpeechRecognition } from './useSpeechRecognition';
 import { MirrorArea } from './MirrorArea';
+import IconButton from '../Icon/IconButton';
 
 export const SpeechRecognitionArea = () => {
   const {
@@ -36,13 +37,15 @@ export const SpeechRecognitionArea = () => {
         value={speechArea}
         onChange={speechAreaChangeHandler}
       />
-      <FontAwesomeIcon
-        onClick={clickHandler}
-        className={styles.mic}
-        color={isRecognising ? 'red' : 'black'}
-        size="sm"
-        icon={faMicrophone}
-      />
+      <IconButton>
+        <FontAwesomeIcon
+          onClick={clickHandler}
+          className={styles.mic}
+          color={isRecognising ? 'red' : 'black'}
+          size="sm"
+          icon={faMicrophone}
+        />
+      </IconButton>
     </div>
   );
 };
