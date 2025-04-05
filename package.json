@@ -8,15 +8,14 @@
     "start": "next start"
   },
   "engines": {
-    "node": "18"
+    "node": "20"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "clone-deep": "^4.0.1",
-    "eslint-config-next": "^13.5.11",
-    "next": "^13.5.11",
+    "next": "^14.2.26",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "styled-components": "^5.3.5"
@@ -26,6 +25,7 @@
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.1",
     "babel-plugin-styled-components": "^2.0.7",
+    "eslint-config-next": "^14.2.26",
     "typescript": "^4.9.5"
   }
 }
