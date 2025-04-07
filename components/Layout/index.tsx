@@ -1,11 +1,18 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigation } from '../Navigation';
 import { SpeechRecognitionArea } from '../SpeechRecognitionArea';
 import styles from './Layout.module.css';
+import { bp } from '../../styles';
 
 export const Layout = ({ children, ...rest }) => {
   const [showMobileSideNav, setShowMobileSideNav] = useState(true);
+
+  useEffect(() => {
+    if (window.innerWidth < parseInt(bp.md.replace('px', ''))) {
+      setShowMobileSideNav(false);
+    }
+  }, []);
 
   const toggleSidebar = () => {
     setShowMobileSideNav((isVisible) => !isVisible);
