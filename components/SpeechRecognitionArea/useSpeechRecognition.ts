@@ -26,10 +26,18 @@ export const useSpeechRecognition = () => {
     // Create a new instance for this component
     recognitionRef.current = new SpeechRecognition();
 
+    // Check if we're on a mobile device
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
     // Configure the recognition instance
     recognitionRef.current.lang = 'de-DE';
     recognitionRef.current.continuous = true;
-    recognitionRef.current.interimResults = true;
+    // in Mobile device, all interim results are .isFinal and will clutter the textarea
+    // therefore disable interimResults on mobile
+    recognitionRef.current.interimResults = isMobile ? false : true;
     recognitionRef.current.maxAlternatives = 1;
 
     // Set up event handlers
@@ -52,12 +60,11 @@ export const useSpeechRecognition = () => {
     recognitionRef.current.onresult = function (word) {
       let transcript = '';
       let interimTranscript = '';
+
       for (let x = word.resultIndex; x < word.results.length; x++) {
         transcript = word.results[x][0].transcript;
-        // API finished processing the current sentence, move onto the next sentence
-        // isFinal is true
+
         if (word.results[x].isFinal) {
-          console.log('isFinal', transcript);
           setSpeechArea((speechArea) => {
             // Add a newline character before the transcript if there's already text
             const prefix = speechArea.length > 0 ? '\n' : '';
