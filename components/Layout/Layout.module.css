@@ -11,8 +11,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: baseline;
+  justify-content: flex-start;
+  align-items: flex-start;
   /* max-width: calc(100% - var(--sidebarWidth)); */
 }
 
@@ -60,7 +60,7 @@
 
 .mainSection {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 5rem 1fr;
   grid-template-areas:
     'header-left header-right'
@@ -74,7 +74,7 @@
 }
 
 .sidebarHidden {
-  grid-template-columns: 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
     'header-left header-right'
     'main main'
