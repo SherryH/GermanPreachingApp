@@ -26,7 +26,7 @@ export const NavigationTop = () => {
   const lesson = window.location.pathname.replace('/', '');
   return (
     <StyledContainer>
-      <LektionHeader>Lektion {lesson}</LektionHeader>
+      {lesson && <LektionHeader>Lektion {lesson}</LektionHeader>}
     </StyledContainer>
   );
 };
