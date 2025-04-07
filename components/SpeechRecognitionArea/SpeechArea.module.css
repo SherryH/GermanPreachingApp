@@ -11,9 +11,11 @@
 
 .textBox {
   min-width: 98%;
-  flex: 1;
+  height: 150px; /* Set an initial height */
   border: dashed 1px;
   margin-top: 5px;
+  resize: both; /* Allow resizing in both directions */
+  overflow: auto; /* Required for resize to work properly */
 }
 
 .mic {
