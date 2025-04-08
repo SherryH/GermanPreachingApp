@@ -1,8 +1,6 @@
 import type { PropsWithChildren } from 'react';
 import Link from 'next/link';
-import styles from './Navigation.module.css';
 import styled from 'styled-components';
-import { hideElement } from '../../styles/cssUtils';
 
 type NavigationSideTypes = PropsWithChildren<{
   showMobileSideNav: boolean;
@@ -17,10 +15,10 @@ const SidebarWrapper = styled.aside<NavigationSideTypes>`
   ${({ showMobileSideNav, theme: { bp, maxWidth } }) => {
     // hide sidebar when window resizes to be small
     // toggle sidebar on click hamburger menu
-    console.log({ showMobileSideNav });
     return `
     ${maxWidth(bp.md)} {
-      ${showMobileSideNav ? `position: relative` : hideElement}
+      transform: translateX(${showMobileSideNav ? '0' : '-100%'});
+      transition: transform 300ms ;
     }
     `;
   }}

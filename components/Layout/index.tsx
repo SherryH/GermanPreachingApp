@@ -17,7 +17,6 @@ export const Layout = ({ children, ...rest }) => {
   const toggleSidebar = () => {
     setShowMobileSideNav((isVisible) => !isVisible);
   };
-
   return (
     <div className={styles.container}>
       <Head>

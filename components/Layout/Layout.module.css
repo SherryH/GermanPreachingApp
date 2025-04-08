@@ -73,10 +73,11 @@
   margin-inline: auto;
 }
 
-.sidebarHidden {
-  grid-template-columns: auto 1fr;
-  grid-template-areas:
-    'header-left header-right'
-    'main main'
-    'footer footer';
+/* When sidebar is hidden, adjust the grid to remove the sidebar area */
+/* only hide sidebar when screen size is smaller than md; */
+/* use hardcoded 768px here as it is too much refactoring to use bp.md */
+@media (max-width: 768px) {
+  .sidebarHidden {
+    grid-template-columns: 0 1fr;
+  }
 }
