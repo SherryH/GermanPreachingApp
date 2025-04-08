@@ -2,7 +2,9 @@
 
 This German Preaching App is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This is to accompany the preaching exercises in the Lesson 4 of the [Smarter German Course](https://courses.smartergerman.com/p/learn-german-online-course-a1-b1-part-01-of-12-intro)
+This is to accompany the preaching exercises in the [Smarter German Course](https://courses.smartergerman.com/p/learn-german-online-course-a1-b1-part-01-of-12-intro)
+
+Home page hosts Preaching Exercise 4.
 
 [Access the App!](https://german-preaching-app.vercel.app/)
 
@@ -14,7 +16,13 @@ In lesson 4, there are multiple combinations of verbs and objects we can select 
 
 ## Technology
 
-NextJS, TypeScript, CSS Modules
+NextJS, TypeScript, CSS Modules, Styled-Component
+(I used CSS Modules at first and added Styled-Component as practice of using js in css)
+
+## Mobile Support
+
+- The sidebar now hides automatically on smaller screen
+- The interim results are not shown in Mirror Area as it is not supported
 
 ## Future Features
 
@@ -28,9 +36,7 @@ NextJS, TypeScript, CSS Modules
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+npx next dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
